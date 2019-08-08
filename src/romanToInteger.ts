@@ -4,12 +4,12 @@ function romanToInt(s: string): number {
   let total = 0;
 
   for (let i = 0; i < s.length; ++i) {
-    const number = romanCharToInt(s[i]);
+    const number = ROMAN_CHAR_INT_MAP.get(s[i])!;
 
     if (i < s.length - 1) {
       if (number === 1 || number === 10 || number === 100) {
         // peek the next number
-        const nextNumber = romanCharToInt(s[i + 1]);
+        const nextNumber = ROMAN_CHAR_INT_MAP.get(s[i + 1])!;
 
         if (nextNumber > number) {
           // if the next number is greater than current one, subtract it (IV => 1, 5 => 5 - 1)
@@ -27,26 +27,15 @@ function romanToInt(s: string): number {
   return total;
 }
 
-function romanCharToInt(char: string): number {
-  switch (char) {
-    case "I":
-      return 1;
-    case "V":
-      return 5;
-    case "X":
-      return 10;
-    case "L":
-      return 50;
-    case "C":
-      return 100;
-    case "D":
-      return 500;
-    case "M":
-      return 1000;
-  }
-
-  throw new TypeError(`${char} is not valid char.`);
-}
+const ROMAN_CHAR_INT_MAP = new Map([
+  ["I", 1],
+  ["V", 5],
+  ["X", 10],
+  ["L", 50],
+  ["C", 100],
+  ["D", 500],
+  ["M", 1000]
+]);
 
 //     while i < bytes.len() {
 //         let (number, i_addition) = match (roman_char_byte_to_int(bytes[i]), i) {
