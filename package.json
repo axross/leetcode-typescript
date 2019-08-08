@@ -1,0 +1,19 @@
+{
+  "name": "leetnode",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kohei Asai <me@axross.io> (https://axross.io/)",
+  "license": "MIT"
+}
