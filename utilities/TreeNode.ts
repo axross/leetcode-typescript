@@ -5,6 +5,10 @@ export interface TreeNode<T> {
 }
 
 export function createTreeNode<T>(array: T[], selfIndex = 0): TreeNode<T> {
+  if (array.length === 0) {
+    throw TypeError("cannot accept a no-element array");
+  }
+
   return {
     val: array[selfIndex],
     left:
@@ -73,5 +77,9 @@ describe("createTreeNode", () => {
         }
       }
     });
+  });
+
+  test("throws if the given array has no element", () => {
+    expect(() => createTreeNode([])).toThrow(TypeError);
   });
 });
