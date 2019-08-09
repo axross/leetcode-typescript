@@ -1,3 +1,5 @@
+import { createTreeNode, TreeNode } from "../utilities/TreeNode";
+
 // 101. Symmetric Tree
 // https://leetcode.com/problems/symmetric-tree/
 function isSymmetric<T>(node: TreeNode<T> | null): boolean {
@@ -29,65 +31,19 @@ function isSymmetric<T>(node: TreeNode<T> | null): boolean {
   return isEqual(node.left, node.right);
 }
 
-interface TreeNode<T> {
-  val: T;
-  left: TreeNode<T> | null;
-  right: TreeNode<T> | null;
-}
-
 describe("101. Symmetric Tree", () => {
   test("#1", () => {
-    expect(
-      isSymmetric({
-        val: 1,
-        left: {
-          val: 2,
-          left: { val: 3, left: null, right: null },
-          right: { val: 4, left: null, right: null }
-        },
-        right: {
-          val: 2,
-          left: { val: 4, left: null, right: null },
-          right: { val: 3, left: null, right: null }
-        }
-      })
-    ).toBe(true);
+    expect(isSymmetric(createTreeNode([1, 2, 2, 3, 4, 4, 3]))).toBe(true);
   });
 
-  test.only("#2", () => {
-    expect(
-      isSymmetric({
-        val: 1,
-        left: {
-          val: 2,
-          left: { val: 3, left: null, right: null },
-          right: null
-        },
-        right: {
-          val: 2,
-          left: { val: 3, left: null, right: null },
-          right: null
-        }
-      })
-    ).toBe(false);
+  test("#2", () => {
+    expect(isSymmetric(createTreeNode([1, 2, 2, 3, null, 3, null]))).toBe(
+      false
+    );
   });
 
   test("#3", () => {
-    expect(
-      isSymmetric({
-        val: 1,
-        left: {
-          val: 2,
-          left: { val: 3, left: null, right: null },
-          right: null
-        },
-        right: {
-          val: 2,
-          left: null,
-          right: { val: 3, left: null, right: null }
-        }
-      })
-    ).toBe(true);
+    expect(isSymmetric(createTreeNode([1, 2, 2, 3, null, null, 3]))).toBe(true);
   });
 
   test("#4", () => {
