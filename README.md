@@ -1,7 +1,6 @@
-# LeetCode answers in TypeScript
+# LeetCode Answers in TypeScript
 
-- 🏃‍♀️ Enough Small Time Complexity
-  - (Not "Minimum" because of No Micro Optimization)
+- 🏃‍♀️ Enough small time and space complexity (not "minimum" because of no micro optimization)
 - 💯 100% TypeScript
 - ✅ Fully tested
-- 🗣 With Description Comments
+- 🗣 With helpful comments
