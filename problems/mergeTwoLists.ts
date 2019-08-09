@@ -1,3 +1,5 @@
+import { createListNode, ListNode } from "../utilities/ListNode";
+
 // 21. Merge Two Sorted Lists
 // https://leetcode.com/problems/merge-two-sorted-lists/
 function mergeTwoLists<T>(
@@ -23,37 +25,11 @@ function mergeTwoLists<T>(
   return list2;
 }
 
-interface ListNode<T> {
-  val: T;
-  next: ListNode<T> | null;
-}
-
 describe("21. Merge Two Sorted Lists", () => {
   test("#1", () => {
     expect(
-      mergeTwoLists(
-        { val: 1, next: { val: 2, next: { val: 4, next: null } } },
-        { val: 1, next: { val: 3, next: { val: 4, next: null } } }
-      )
-    ).toEqual({
-      val: 1,
-      next: {
-        val: 1,
-        next: {
-          val: 2,
-          next: {
-            val: 3,
-            next: {
-              val: 4,
-              next: {
-                val: 4,
-                next: null
-              }
-            }
-          }
-        }
-      }
-    });
+      mergeTwoLists(createListNode([1, 2, 4]), createListNode([1, 3, 4]))
+    ).toEqual(createListNode([1, 1, 2, 3, 4, 4]));
   });
 
   test("#2", () => {
