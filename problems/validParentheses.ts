@@ -24,32 +24,4 @@ function isValid(s: string): boolean {
 const OPEN_BRACKET_SET = new Set(["(", "[", "{"]);
 const BRACKET_PAIR_MAP = new Map([[")", "("], ["]", "["], ["}", "{"]]);
 
-describe("20. Valid Parentheses", () => {
-  test("#1", () => {
-    expect(isValid("()")).toBe(true);
-  });
-
-  test("#2", () => {
-    expect(isValid("()[]{}")).toBe(true);
-  });
-
-  test("#3", () => {
-    expect(isValid("(]")).toBe(false);
-  });
-
-  test("#4", () => {
-    expect(isValid("([)]")).toBe(false);
-  });
-
-  test("#5", () => {
-    expect(isValid("{[]}")).toBe(true);
-  });
-
-  test("#6", () => {
-    expect(isValid("[")).toBe(false);
-  });
-
-  test("#7", () => {
-    expect(isValid("[{")).toBe(false);
-  });
-});
+export default isValid;
