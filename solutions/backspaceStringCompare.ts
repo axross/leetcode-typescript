@@ -1,25 +1,18 @@
 // 844. Backspace String Compare
 // https://leetcode.com/problems/backspace-string-compare/
 function backspaceCompare(S: string, T: string): boolean {
-  return emulateTyping(S) === emulateTyping(T);
-}
+  let s = S;
+  let t = T;
 
-function emulateTyping(strokes: string): string {
-  const stack: string[] = [];
-
-  for (let i = 0; i < strokes.length; ++i) {
-    const stroke = strokes[i];
-
-    if (stroke === "#") {
-      stack.pop();
-
-      continue;
-    }
-
-    stack.push(stroke);
+  while (s.includes("#")) {
+    s = s.replace(/([^#]#|^#+)/g, "");
   }
 
-  return stack.join("");
+  while (t.includes("#")) {
+    t = t.replace(/([^#]#|^#+)/g, "");
+  }
+
+  return s === t;
 }
 
 export default backspaceCompare;
