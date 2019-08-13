@@ -1,6 +1,8 @@
 // 256. Paint House
 // https://leetcode.com/problems/paint-house/
 function minCost(costs: [number, number, number][]): number {
+  // this is dynamic programming.
+  // see https://github.com/axross/leetcode-typescript/pull/56
   const dp = new Map<number, [number, number, number]>([[-1, [0, 0, 0]]]);
 
   for (let i = 0; i < costs.length; ++i) {
@@ -13,6 +15,7 @@ function minCost(costs: [number, number, number][]): number {
     ]);
   }
 
+  // the minimum value in the end is the minimum cost
   return Math.min(...dp.get(costs.length - 1)!);
 }
 
