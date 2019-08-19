@@ -1,4 +1,4 @@
-export function push<T>(
+export function heapPush<T>(
   array: T[],
   value: T,
   comparator: OrderComparator<T> = compare
@@ -23,7 +23,7 @@ export function push<T>(
   return array;
 }
 
-export function pop<T>(
+export function heapPop<T>(
   array: T[],
   comparator: OrderComparator<T> = compare
 ): T | undefined {
