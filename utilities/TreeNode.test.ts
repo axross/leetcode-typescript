@@ -1,42 +1,27 @@
-import { createTreeNode } from "./TreeNode";
+import { createBinaryTreeNode } from "./TreeNode";
 
-describe("createTreeNode", () => {
+describe("createBinaryTreeNode", () => {
   test("creates TreeNode by an array #1", () => {
-    expect(createTreeNode([1, 2, 2, 3, 4, 4, 3])).toEqual({
+    expect(createBinaryTreeNode([1, 2, 3])).toEqual({
       val: 1,
       left: {
         val: 2,
-        left: {
-          val: 3,
-          left: null,
-          right: null
-        },
-        right: {
-          val: 4,
-          left: null,
-          right: null
-        }
+        left: null,
+        right: null
       },
       right: {
-        val: 2,
-        left: {
-          val: 4,
-          left: null,
-          right: null
-        },
-        right: {
-          val: 3,
-          left: null,
-          right: null
-        }
+        val: 3,
+        left: null,
+        right: null
       }
     });
   });
 
   test("creates TreeNode by an array #2", () => {
-    expect(createTreeNode([1, 2, 2, 3, null, null, 3])).toEqual({
+    expect(createBinaryTreeNode([1, null, 2, 3])).toEqual({
       val: 1,
-      left: {
+      left: null,
+      right: {
         val: 2,
         left: {
           val: 3,
@@ -44,20 +29,45 @@ describe("createTreeNode", () => {
           right: null
         },
         right: null
-      },
-      right: {
-        val: 2,
-        left: null,
-        right: {
-          val: 3,
-          left: null,
-          right: null
-        }
       }
     });
   });
 
-  test("throws if the given array has no element", () => {
-    expect(() => createTreeNode([])).toThrow(TypeError);
+  test.only("creates TreeNode by an array #3", () => {
+    expect(
+      createBinaryTreeNode([5, 4, 7, 3, null, 2, null, -1, null, 9])
+    ).toEqual({
+      val: 5,
+      left: {
+        val: 4,
+        left: {
+          val: 3,
+          left: {
+            val: -1,
+            left: null,
+            right: null
+          },
+          right: null
+        },
+        right: null
+      },
+      right: {
+        val: 7,
+        left: {
+          val: 2,
+          left: {
+            val: 9,
+            left: null,
+            right: null
+          },
+          right: null
+        },
+        right: null
+      }
+    });
+  });
+
+  test("returns null by an empty array", () => {
+    expect(createBinaryTreeNode([])).toEqual(null);
   });
 });
