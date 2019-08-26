@@ -1,8 +1,6 @@
 // 646. Maximum Length of Pair Chain
 // https://leetcode.com/problems/maximum-length-of-pair-chain/
 export default function findLongestChain(pairs: [number, number][]): number {
-  if (pairs.length === 0) return 0;
-
   // dynamic programming solution
   // see https://github.com/axross/leetcode-typescript/pull/73
   let last = Number.POSITIVE_INFINITY;
