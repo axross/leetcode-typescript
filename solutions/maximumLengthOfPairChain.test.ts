@@ -12,8 +12,4 @@ describe("646. Maximum Length of Pair Chain", () => {
   test("#3", () => {
     expect(findLongestChain([[1, 2]])).toBe(1);
   });
-
-  test("#4", () => {
-    expect(findLongestChain([])).toBe(0);
-  });
 });
