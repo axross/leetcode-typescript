@@ -1,25 +1,23 @@
 // 69. Sqrt(x)
 // https://leetcode.com/problems/sqrtx/
-function mySqrt(x: number): number {
+export default function mySqrt(x: number): number {
   if (x <= 1) return x;
 
-  let searchRangeStart = 0;
-  let searchRangeEnd = x;
+  let from = 1;
+  let to = x;
 
-  while (searchRangeStart < searchRangeEnd - 1) {
-    const middle = Math.floor((searchRangeStart + searchRangeEnd) / 2);
-    const divided = Math.floor(x / middle);
+  while (from <= to) {
+    const middle = Math.floor((from + to) / 2);
+    const squareOfMiddle = middle * middle;
 
-    if (divided === middle) return middle;
+    if (squareOfMiddle === x) return middle;
 
-    if (middle > divided) {
-      searchRangeEnd = middle;
+    if (squareOfMiddle < x) {
+      from = middle + 1;
     } else {
-      searchRangeStart = middle;
+      to = middle - 1;
     }
   }
 
-  return searchRangeStart;
+  return to;
 }
-
-export default mySqrt;
