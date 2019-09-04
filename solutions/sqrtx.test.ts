@@ -14,14 +14,18 @@ describe("69. Sqrt(x)", () => {
   });
 
   test("#4", () => {
-    expect(mySqrt(1)).toBe(1);
+    expect(mySqrt(8)).toBe(2);
   });
 
   test("#5", () => {
-    expect(mySqrt(0)).toBe(0);
+    expect(mySqrt(1)).toBe(1);
   });
 
   test("#6", () => {
+    expect(mySqrt(0)).toBe(0);
+  });
+
+  test("#7", () => {
     expect(mySqrt(Number.MAX_SAFE_INTEGER)).toBe(94906265);
   });
 });
