@@ -1,27 +1,25 @@
 // 278. First Bad Version
 // https://leetcode.com/problems/first-bad-version/
-function solution(isBadVersion: IsBadVersion): FindFirstBadVersion {
+export default function solution(
+  isBadVersion: IsBadVersion
+): FindFirstBadVersion {
   return n => {
     let from = 1;
     let to = n + 1;
-    let firstBadVersion = 0;
 
-    while (from <= to) {
-      const middle = Math.trunc((from + to) / 2);
+    while (from < to) {
+      let middle = Math.floor((from + to) / 2);
 
       if (isBadVersion(middle)) {
-        firstBadVersion = middle;
-        to = middle - 1;
+        to = middle;
       } else {
         from = middle + 1;
       }
     }
 
-    return firstBadVersion;
+    return from;
   };
 }
 
 type IsBadVersion = (version: number) => boolean;
 type FindFirstBadVersion = (n: number) => number;
-
-export default solution;
