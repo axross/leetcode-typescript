@@ -33,7 +33,7 @@ describe("createBinaryTreeNode", () => {
     });
   });
 
-  test.only("creates TreeNode by an array #3", () => {
+  test("creates TreeNode by an array #3", () => {
     expect(
       createBinaryTreeNode([5, 4, 7, 3, null, 2, null, -1, null, 9])
     ).toEqual({
