@@ -8,8 +8,8 @@ describe("658. Find K Closest Elements", () => {
     [[[1, 3, 3, 4, 5, 7, 7, 8, 8, 8], 6, 6], [4, 5, 7, 7, 8, 8]]
   ]);
 
-  for (const [[arr, k, x], expected] of TEST_CASES.entries()) {
-    test(`when arr=${arr}, k=${k}, x=${x}`, () => {
+  for (const [[arr, k, x], expected] of TEST_CASES) {
+    it(`returns [${expected}] when [${arr}], ${k} and ${x}`, () => {
       expect(findClosestElements(arr, k, x)).toEqual(expected);
     });
   }

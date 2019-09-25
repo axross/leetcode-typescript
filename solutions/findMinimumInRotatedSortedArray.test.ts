@@ -10,8 +10,8 @@ const TEST_CASES = new Map([
 ]);
 
 describe("153. Find Minimum in Rotated Sorted Array", () => {
-  for (const [args, expected] of TEST_CASES.entries()) {
-    test(`when [${args.join(", ")}]`, () => {
+  for (const [args, expected] of TEST_CASES) {
+    it(`returns ${expected} when [${args}]`, () => {
       expect(findMin(args)).toBe(expected);
     });
   }

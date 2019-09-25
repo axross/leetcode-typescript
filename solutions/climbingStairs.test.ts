@@ -1,23 +1,11 @@
 import climbStairs from "./climbingStairs";
 
 describe("70. Climbing Stairs", () => {
-  test("#1", () => {
-    expect(climbStairs(1)).toBe(1);
-  });
+  const TEST_CASES = new Map([[1, 1], [2, 2], [3, 3], [4, 5], [32, 3524578]]);
 
-  test("#2", () => {
-    expect(climbStairs(2)).toBe(2);
-  });
-
-  test("#3", () => {
-    expect(climbStairs(3)).toBe(3);
-  });
-
-  test("#4", () => {
-    expect(climbStairs(4)).toBe(5);
-  });
-
-  test("#5", () => {
-    expect(climbStairs(32)).toBe(3524578);
-  });
+  for (const [n, expected] of TEST_CASES) {
+    it(`returns ${expected} when ${n}`, () => {
+      expect(climbStairs(n)).toBe(expected);
+    });
+  }
 });
