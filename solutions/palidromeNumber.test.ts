@@ -1,31 +1,19 @@
 import isPalindrome from "./palidromeNumber";
 
 describe("9. Palindrome Number", () => {
-  test("#1", () => {
-    expect(isPalindrome(121)).toBe(true);
-  });
+  const TEST_CASES = new Map([
+    [121, true],
+    [-121, false],
+    [5, true],
+    [0, true],
+    [10, false],
+    [101, true],
+    [1010, false]
+  ]);
 
-  test("#2", () => {
-    expect(isPalindrome(-121)).toBe(false);
-  });
-
-  test("#3", () => {
-    expect(isPalindrome(5)).toBe(true);
-  });
-
-  test("#4", () => {
-    expect(isPalindrome(0)).toBe(true);
-  });
-
-  test("#5", () => {
-    expect(isPalindrome(10)).toBe(false);
-  });
-
-  test("#6", () => {
-    expect(isPalindrome(101)).toBe(true);
-  });
-
-  test("#7", () => {
-    expect(isPalindrome(1010)).toBe(false);
-  });
+  for (const [number, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${number}`, () => {
+      expect(isPalindrome(number)).toBe(expected);
+    });
+  }
 });

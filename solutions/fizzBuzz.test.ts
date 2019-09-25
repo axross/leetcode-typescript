@@ -34,7 +34,7 @@ describe("412. Fizz Buzz", () => {
 
   for (const [n, expected] of TEST_CASES) {
     it(`returns ${expected} when called with ${n}`, () => {
-      expect(fizzBuzz(n)).toBe(expected);
+      expect(fizzBuzz(n)).toEqual(expected);
     });
   }
 });

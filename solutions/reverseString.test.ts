@@ -1,19 +1,18 @@
 import reverseString from "./reverseString";
 
 describe("344. Reverse String", () => {
-  test("#1", () => {
-    const characters = ["h", "e", "l", "l", "o"];
+  const TEST_CASES = new Map([
+    [["h", "e", "l", "l", "o"], ["o", "l", "l", "e", "h"]],
+    [["H", "a", "n", "n", "a", "h"], ["h", "a", "n", "n", "a", "H"]]
+  ]);
 
-    reverseString(characters);
+  for (const [chars, expected] of TEST_CASES) {
+    it(`reverses [${chars}] to be [${expected}]`, () => {
+      const characters = [...chars];
 
-    expect(characters).toEqual(["o", "l", "l", "e", "h"]);
-  });
+      reverseString(characters);
 
-  test("#2", () => {
-    const characters = ["H", "a", "n", "n", "a", "h"];
-
-    reverseString(characters);
-
-    expect(characters).toEqual(["h", "a", "n", "n", "a", "H"]);
-  });
+      expect(characters).toEqual(expected);
+    });
+  }
 });

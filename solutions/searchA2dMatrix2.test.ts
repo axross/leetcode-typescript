@@ -1,9 +1,9 @@
 import searchMatrix from "./searchA2dMatrix2";
 
 describe("240. Search a 2D Matrix II", () => {
-  test("#1", () => {
-    expect(
-      searchMatrix(
+  const TEST_CASES = new Map<[number[][], number], boolean>([
+    [
+      [
         [
           [1, 4, 7, 11, 15],
           [2, 5, 8, 12, 19],
@@ -12,13 +12,11 @@ describe("240. Search a 2D Matrix II", () => {
           [18, 21, 23, 26, 30]
         ],
         5
-      )
-    ).toBe(true);
-  });
-
-  test("#2", () => {
-    expect(
-      searchMatrix(
+      ],
+      true
+    ],
+    [
+      [
         [
           [1, 4, 7, 11, 15],
           [2, 5, 8, 12, 19],
@@ -27,7 +25,16 @@ describe("240. Search a 2D Matrix II", () => {
           [18, 21, 23, 26, 30]
         ],
         20
-      )
-    ).toBe(false);
-  });
+      ],
+      false
+    ]
+  ]);
+
+  for (const [[matrix, target], expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${matrix.map(
+      list => `[${list}]`
+    )}] and ${target}`, () => {
+      expect(searchMatrix(matrix, target)).toBe(expected);
+    });
+  }
 });

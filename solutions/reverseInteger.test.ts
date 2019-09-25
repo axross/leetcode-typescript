@@ -1,23 +1,17 @@
 import reverse from "./reverseInteger";
 
 describe("7. Reverse Integer", () => {
-  test("#1", () => {
-    expect(reverse(123)).toBe(321);
-  });
+  const TEST_CASES = new Map([
+    [123, 321],
+    [-123, -321],
+    [-12, -21],
+    [120, 21],
+    [1563847412, 0]
+  ]);
 
-  test("#2", () => {
-    expect(reverse(-123)).toBe(-321);
-  });
-
-  test("#3", () => {
-    expect(reverse(-12)).toBe(-21);
-  });
-
-  test("#4", () => {
-    expect(reverse(120)).toBe(21);
-  });
-
-  test("#5", () => {
-    expect(reverse(1563847412)).toBe(0);
-  });
+  for (const [number, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${number}`, () => {
+      expect(reverse(number)).toEqual(expected);
+    });
+  }
 });

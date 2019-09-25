@@ -3,10 +3,8 @@ export interface ListNode<T> {
   next: ListNode<T> | null;
 }
 
-export function createListNode<T>(array: T[]): ListNode<T> {
-  if (array.length === 0) {
-    throw TypeError("cannot accept a no-element array");
-  }
+export function createListNode<T>(array: T[]): ListNode<T> | null {
+  if (array.length === 0) return null;
 
   const head: ListNode<T> = { val: array[0], next: null };
   let tail = head;
