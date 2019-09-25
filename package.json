@@ -12,7 +12,7 @@
     "typescript": "^3.6.3"
   },
   "scripts": {
-    "test": "jest --notify"
+    "test": "jest --notify --verbose"
   },
   "author": "Kohei Asai <me@axross.io> (https://axross.io/)",
   "license": "MIT"
