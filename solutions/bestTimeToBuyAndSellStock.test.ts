@@ -9,7 +9,7 @@ describe("121. Best Time to Buy and Sell Stock", () => {
   ]);
 
   for (const [prices, expected] of TEST_CASES) {
-    it(`returns ${expected} when [${prices}]`, () => {
+    it(`returns ${expected} when called with [${prices}]`, () => {
       expect(maxProfit(prices)).toBe(expected);
     });
   }

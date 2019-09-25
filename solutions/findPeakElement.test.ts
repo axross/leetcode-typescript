@@ -8,7 +8,7 @@ describe("162. Find Peak Element", () => {
     [[1], [0]]
   ]);
 
-  for (const [testCase, expectedOneOf] of TEST_CASES) {
+  for (const [values, expectedOneOf] of TEST_CASES) {
     it(`returns ${
       expectedOneOf.length === 1
         ? expectedOneOf[0]
@@ -22,8 +22,8 @@ describe("162. Find Peak Element", () => {
                 : `${v}`,
             ""
           )
-    } when [${testCase}]`, () => {
-      expect(expectedOneOf.includes(findPeakElement(testCase))).toBeTruthy();
+    } when called with [${values}]`, () => {
+      expect(expectedOneOf.includes(findPeakElement(values))).toBeTruthy();
     });
   }
 });

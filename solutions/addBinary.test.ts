@@ -7,7 +7,7 @@ describe("67. Add Binary", () => {
   ]);
 
   for (const [[a, b], expected] of TEST_CASES) {
-    it(`returns ${expected} when ${a} and ${b}`, () => {
+    it(`returns ${expected} when called with ${a} and ${b}`, () => {
       expect(addBinary(a, b)).toBe(expected);
     });
   }

@@ -9,7 +9,7 @@ describe("844. Backspace String Compare", () => {
   ]);
 
   for (const [[s, t], expected] of TEST_CASES) {
-    it(`returns ${expected} when ${s} and ${t}`, () => {
+    it(`returns ${expected} when called with ${s} and ${t}`, () => {
       expect(backspaceCompare(s, t)).toBe(expected);
     });
   }

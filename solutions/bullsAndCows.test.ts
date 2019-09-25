@@ -12,7 +12,7 @@ describe("299. Bulls and Cows", () => {
   ]);
 
   for (const [[secret, guess], expected] of TEST_CASES) {
-    it(`returns ${expected} when ${secret} and ${guess}`, () => {
+    it(`returns ${expected} when called with ${secret} and ${guess}`, () => {
       expect(getHint(secret, guess)).toBe(expected);
     });
   }

@@ -9,7 +9,7 @@ describe("658. Find K Closest Elements", () => {
   ]);
 
   for (const [[arr, k, x], expected] of TEST_CASES) {
-    it(`returns [${expected}] when [${arr}], ${k} and ${x}`, () => {
+    it(`returns [${expected}] when called with [${arr}], ${k} and ${x}`, () => {
       expect(findClosestElements(arr, k, x)).toEqual(expected);
     });
   }

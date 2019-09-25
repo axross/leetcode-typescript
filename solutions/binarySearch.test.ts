@@ -7,7 +7,7 @@ describe("704. Binary Search", () => {
   ]);
 
   for (const [[nums, target], expected] of TEST_CASES) {
-    it(`returns ${expected} when [${nums}] and ${target}`, () => {
+    it(`returns ${expected} when called with [${nums}] and ${target}`, () => {
       expect(search(nums, target)).toBe(expected);
     });
   }
