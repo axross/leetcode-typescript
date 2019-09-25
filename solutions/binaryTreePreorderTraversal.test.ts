@@ -14,7 +14,7 @@ describe("144. Binary Tree Preorder Traversal", () => {
   ]);
 
   for (const [tree, expected] of TEST_CASES) {
-    test(`when [${tree.join(", ")}]`, () => {
+    it(`returns ${expected} when called with [${tree}]`, () => {
       expect(preorderTraversal(createBinaryTreeNode(tree))).toEqual(expected);
     });
   }

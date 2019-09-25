@@ -38,7 +38,7 @@ describe("572. Subtree of Another Tree", () => {
   ]);
 
   for (const [[s, t], expected] of TEST_CASES) {
-    test(`when [${t}] in [${s}]`, () => {
+    it(`returns ${expected} when called with [${s}] and [${t}]`, () => {
       expect(
         isSubtree(createBinaryTreeNode(s)!, createBinaryTreeNode(t)!)
       ).toBe(expected);

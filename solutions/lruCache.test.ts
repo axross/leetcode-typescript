@@ -1,28 +1,56 @@
 import LRUCache from "./lruCache";
 
 describe("146. LRU Cache", () => {
-  test("#1", () => {
-    const cache = new LRUCache(2);
+  const TEST_CASES = new Map<[string[], number[][]], (number | void)[]>([
+    [
+      [
+        [
+          "LRUCache",
+          "put",
+          "put",
+          "get",
+          "put",
+          "get",
+          "put",
+          "get",
+          "get",
+          "get"
+        ],
+        [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+      ],
+      [undefined, undefined, undefined, 1, undefined, -1, undefined, -1, 3, 4]
+    ],
+    [
+      [
+        ["LRUCache", "put", "put", "put", "put", "get", "get"],
+        [[2], [2, 1], [1, 1], [2, 3], [4, 1], [1], [2]]
+      ],
+      [undefined, undefined, undefined, undefined, undefined, -1, 3]
+    ]
+  ]);
 
-    cache.put(1, 1);
-    cache.put(2, 2);
-    expect(cache.get(1)).toBe(1);
-    cache.put(3, 3); // evicts key 2
-    expect(cache.get(2)).toBe(-1);
-    cache.put(4, 4); // evicts key 1
-    expect(cache.get(1)).toBe(-1);
-    expect(cache.get(3)).toBe(3); // returns 3
-    expect(cache.get(4)).toBe(4); // returns 4
-  });
+  for (const [
+    [operations, operationArgs],
+    expectedValuesEachOperation
+  ] of TEST_CASES) {
+    it(`manages key-value pairs with fixed sized space`, () => {
+      let cache: LRUCache;
 
-  test("#2", () => {
-    const cache = new LRUCache(2);
-
-    cache.put(2, 1);
-    cache.put(1, 1);
-    cache.put(2, 3);
-    cache.put(4, 1);
-    expect(cache.get(1)).toBe(-1);
-    expect(cache.get(2)).toBe(3);
-  });
+      for (const i of operations.keys()) {
+        switch (operations[i]) {
+          case "LRUCache":
+            cache = new LRUCache(operationArgs[i][0]);
+            break;
+          case "put":
+            cache!.put(operationArgs[i][0], operationArgs[i][1]);
+            break;
+          case "get":
+            expect(cache!.get(operationArgs[i][0])).toBe(
+              expectedValuesEachOperation[i]
+            );
+            break;
+        }
+      }
+    });
+  }
 });

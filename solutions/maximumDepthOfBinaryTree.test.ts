@@ -2,13 +2,11 @@ import { createBinaryTreeNode } from "../utilities/TreeNode";
 import maxDepth from "./maximumDepthOfBinaryTree";
 
 describe("104. Maximum Depth of Binary Tree", () => {
-  test("#1", () => {
-    expect(maxDepth(createBinaryTreeNode([3, 9, 20, null, null, 15, 7]))).toBe(
-      3
-    );
-  });
+  const TEST_CASES = new Map([[[3, 9, 20, null, null, 15, 7], 3], [[], 0]]);
 
-  test("#2", () => {
-    expect(maxDepth(createBinaryTreeNode([]))).toBe(0);
-  });
+  for (const [values, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${values}]`, () => {
+      expect(maxDepth(createBinaryTreeNode(values))).toBe(expected);
+    });
+  }
 });

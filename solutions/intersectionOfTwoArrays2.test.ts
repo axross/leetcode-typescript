@@ -1,17 +1,11 @@
 import intersect from "./intersectionOfTwoArrays2";
 
 describe("350. Intersection of Two Arrays II", () => {
-  test("#1", () => {
-    expect(intersect([1, 2, 2, 1], [2, 2]).sort()).toEqual([2, 2].sort());
-  });
-
-  test("#2", () => {
-    expect(intersect([4, 9, 5], [9, 4, 9, 8, 4]).sort()).toEqual([4, 9].sort());
-  });
-
-  test("#3", () => {
-    expect(
-      intersect(
+  const TEST_CASES = new Map<[number[], number[]], number[]>([
+    [[[1, 2, 2, 1], [2, 2]], [2, 2]],
+    [[[4, 9, 5], [9, 4, 9, 8, 4]], [4, 9]],
+    [
+      [
         [
           61,
           24,
@@ -140,9 +134,14 @@ describe("350. Intersection of Two Arrays II", () => {
           61,
           48
         ]
-      ).sort()
-    ).toEqual(
-      [5, 4, 57, 79, 7, 89, 88, 45, 34, 92, 38, 85, 6, 0, 77, 44, 61].sort()
-    );
-  });
+      ],
+      [0, 4, 5, 6, 7, 34, 38, 44, 45, 57, 61, 77, 79, 85, 88, 89, 92]
+    ]
+  ]);
+
+  for (const [[nums1, nums2], expected] of TEST_CASES) {
+    it(`returns [${expected}] when called with [${nums1}] and [${nums2}]`, () => {
+      expect(intersect(nums1, nums2).sort((a, b) => a - b)).toEqual(expected);
+    });
+  }
 });

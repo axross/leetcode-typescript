@@ -1,19 +1,16 @@
 import isPalindrome from "./validPalindrome";
 
 describe("125. Valid Palindrome", () => {
-  test("#1", () => {
-    expect(isPalindrome("A man, a plan, a canal: Panama")).toBe(true);
-  });
+  const TEST_CASES = new Map([
+    ["A man, a plan, a canal: Panama", true],
+    ["race a car", false],
+    ["", true],
+    ["0P", false]
+  ]);
 
-  test("#2", () => {
-    expect(isPalindrome("race a car")).toBe(false);
-  });
-
-  test("#3", () => {
-    expect(isPalindrome("")).toBe(true);
-  });
-
-  test("#4", () => {
-    expect(isPalindrome("0P")).toBe(false);
-  });
+  for (const [s, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${s}`, () => {
+      expect(isPalindrome(s)).toBe(expected);
+    });
+  }
 });

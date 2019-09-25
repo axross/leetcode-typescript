@@ -1,15 +1,15 @@
 import rob from "./houseRobber";
 
 describe("198. House Robber", () => {
-  test("#1", () => {
-    expect(rob([1, 2, 3, 1])).toBe(4);
-  });
+  const TEST_CASES = new Map([
+    [[1, 2, 3, 1], 4],
+    [[2, 7, 9, 3, 1], 12],
+    [[2, 4, 9, 3, 1, 5], 16]
+  ]);
 
-  test("#2", () => {
-    expect(rob([2, 7, 9, 3, 1])).toBe(12);
-  });
-
-  test("#3", () => {
-    expect(rob([2, 4, 9, 3, 1, 5])).toBe(16);
-  });
+  for (const [nums, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${nums}]`, () => {
+      expect(rob(nums)).toBe(expected);
+    });
+  }
 });

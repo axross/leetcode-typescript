@@ -1,27 +1,18 @@
 import firstUniqChar from "./firstUniqueCharacterInAString";
 
 describe("387. First Unique Character in a String", () => {
-  test("#1", () => {
-    expect(firstUniqChar("leetcode")).toBe(0);
-  });
+  const TEST_CASES = new Map([
+    ["leetcode", 0],
+    ["loveleetcode", 2],
+    ["leetcodeleetcode", -1],
+    ["theleetcode", 1],
+    ["j", 0],
+    ["", -1]
+  ]);
 
-  test("#2", () => {
-    expect(firstUniqChar("loveleetcode")).toBe(2);
-  });
-
-  test("#3", () => {
-    expect(firstUniqChar("leetcodeleetcode")).toBe(-1);
-  });
-
-  test("#4", () => {
-    expect(firstUniqChar("theleetcode")).toBe(1);
-  });
-
-  test("#5", () => {
-    expect(firstUniqChar("j")).toBe(0);
-  });
-
-  test("#6", () => {
-    expect(firstUniqChar("")).toBe(-1);
-  });
+  for (const [s, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${s}`, () => {
+      expect(firstUniqChar(s)).toBe(expected);
+    });
+  }
 });

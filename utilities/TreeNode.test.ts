@@ -1,7 +1,7 @@
 import { createBinaryTreeNode } from "./TreeNode";
 
 describe("createBinaryTreeNode", () => {
-  test("creates TreeNode by an array #1", () => {
+  it("creates TreeNode by an array #1", () => {
     expect(createBinaryTreeNode([1, 2, 3])).toEqual({
       val: 1,
       left: {
@@ -17,7 +17,7 @@ describe("createBinaryTreeNode", () => {
     });
   });
 
-  test("creates TreeNode by an array #2", () => {
+  it("creates TreeNode by an array #2", () => {
     expect(createBinaryTreeNode([1, null, 2, 3])).toEqual({
       val: 1,
       left: null,
@@ -33,7 +33,7 @@ describe("createBinaryTreeNode", () => {
     });
   });
 
-  test("creates TreeNode by an array #3", () => {
+  it("creates TreeNode by an array #3", () => {
     expect(
       createBinaryTreeNode([5, 4, 7, 3, null, 2, null, -1, null, 9])
     ).toEqual({
@@ -67,7 +67,7 @@ describe("createBinaryTreeNode", () => {
     });
   });
 
-  test("returns null by an empty array", () => {
+  it("returns null by an empty array", () => {
     expect(createBinaryTreeNode([])).toEqual(null);
   });
 });

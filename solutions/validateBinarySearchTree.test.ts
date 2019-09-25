@@ -2,21 +2,16 @@ import { createBinaryTreeNode } from "../utilities/TreeNode";
 import isValidBST from "./validateBinarySearchTree";
 
 describe("98. Validate Binary Search Tree", () => {
-  test("#1", () => {
-    expect(isValidBST(createBinaryTreeNode([2, 1, 3]))).toBe(true);
-  });
+  const TEST_CASES = new Map([
+    [[2, 1, 3], true],
+    [[5, 1, 4, null, null, 3, 6], false],
+    [[1, 1], false],
+    [[], true]
+  ]);
 
-  test("#2", () => {
-    expect(isValidBST(createBinaryTreeNode([5, 1, 4, null, null, 3, 6]))).toBe(
-      false
-    );
-  });
-
-  test("#3", () => {
-    expect(isValidBST(createBinaryTreeNode([1, 1]))).toBe(false);
-  });
-
-  test("#4", () => {
-    expect(isValidBST(createBinaryTreeNode([]))).toBe(true);
-  });
+  for (const [values, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${values}]`, () => {
+      expect(isValidBST(createBinaryTreeNode(values))).toBe(expected);
+    });
+  }
 });

@@ -1,11 +1,11 @@
 import isHappy from "./happyNumber";
 
 describe("202. Happy Number", () => {
-  test("#1", () => {
-    expect(isHappy(19)).toBe(true);
-  });
+  const TEST_CASES = new Map([[19, true], [18, false]]);
 
-  test("#2", () => {
-    expect(isHappy(18)).toBe(false);
-  });
+  for (const [n, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${n}`, () => {
+      expect(isHappy(n)).toBe(expected);
+    });
+  }
 });

@@ -33,7 +33,7 @@ describe("createListNode", () => {
     });
   });
 
-  test("throws if the given array has no element", () => {
-    expect(() => createListNode([])).toThrow(TypeError);
+  test("returns null if the given array has no element", () => {
+    expect(createListNode([])).toBe(null);
   });
 });

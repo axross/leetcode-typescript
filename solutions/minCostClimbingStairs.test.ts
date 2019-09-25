@@ -1,11 +1,14 @@
 import minCostClimbingStairs from "./minCostClimbingStairs";
 
 describe("746. Min Cost Climbing Stairs", () => {
-  test("#1", () => {
-    expect(minCostClimbingStairs([10, 15, 20])).toBe(15);
-  });
+  const TEST_CASES = new Map([
+    [[10, 15, 20], 15],
+    [[1, 100, 1, 1, 1, 100, 1, 1, 100, 1], 6]
+  ]);
 
-  test("#2", () => {
-    expect(minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])).toBe(6);
-  });
+  for (const [costs, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${costs}]`, () => {
+      expect(minCostClimbingStairs(costs)).toBe(expected);
+    });
+  }
 });

@@ -1,11 +1,14 @@
 import addBinary from "./addBinary";
 
 describe("67. Add Binary", () => {
-  test("#1", () => {
-    expect(addBinary("11", "1")).toBe("100");
-  });
+  const TEST_CASES = new Map([
+    [["11", "1"], "100"],
+    [["1010", "1011"], "10101"]
+  ]);
 
-  test("#2", () => {
-    expect(addBinary("1010", "1011")).toBe("10101");
-  });
+  for (const [[a, b], expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${a} and ${b}`, () => {
+      expect(addBinary(a, b)).toBe(expected);
+    });
+  }
 });
