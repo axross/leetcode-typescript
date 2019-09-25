@@ -1,21 +1,15 @@
 import isAlienSorted from "./verifyingAnAlienDictionary";
 
 describe("953. Verifying an Alien Dictionary", () => {
-  test("#1", () => {
-    expect(
-      isAlienSorted(["hello", "leetcode"], "hlabcdefgijkmnopqrstuvwxyz")
-    ).toBe(true);
-  });
+  const TEST_CASES = new Map<[string[], string], boolean>([
+    [[["hello", "leetcode"], "hlabcdefgijkmnopqrstuvwxyz"], true],
+    [[["word", "world", "row"], "worldabcefghijkmnpqstuvxyz"], false],
+    [[["apple", "app"], "abcdefghijklmnopqrstuvwxyz"], false]
+  ]);
 
-  test("#2", () => {
-    expect(
-      isAlienSorted(["word", "world", "row"], "worldabcefghijkmnpqstuvxyz")
-    ).toBe(false);
-  });
-
-  test("#3", () => {
-    expect(isAlienSorted(["apple", "app"], "abcdefghijklmnopqrstuvwxyz")).toBe(
-      false
-    );
-  });
+  for (const [[words, order], expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${words}] and ${order}`, () => {
+      expect(isAlienSorted(words, order)).toBe(expected);
+    });
+  }
 });

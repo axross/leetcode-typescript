@@ -2,21 +2,16 @@ import { createBinaryTreeNode } from "../utilities/TreeNode";
 import isSymmetric from "./symmetricTree";
 
 describe("101. Symmetric Tree", () => {
-  test("#1", () => {
-    expect(isSymmetric(createBinaryTreeNode([1, 2, 2, 3, 4, 4, 3]))).toBe(true);
-  });
+  const TEST_CASES = new Map([
+    [[1, 2, 2, 3, 4, 4, 3], true],
+    [[1, 2, 2, 3, null, 3, null], false],
+    [[1, 2, 2, 3, null, null, 3], true],
+    [[], true]
+  ]);
 
-  test("#2", () => {
-    expect(isSymmetric(createBinaryTreeNode([1, 2, 2, 3, null, 3, null]))).toBe(
-      false
-    );
-  });
-
-  test("#3", () => {
-    expect(isSymmetric(createBinaryTreeNode([1, 2, 2, 3, null, null, 3]))).toBe(true);
-  });
-
-  test("#4", () => {
-    expect(isSymmetric(createBinaryTreeNode([]))).toBe(true);
-  });
+  for (const [values, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${values}]`, () => {
+      expect(isSymmetric(createBinaryTreeNode(values))).toBe(expected);
+    });
+  }
 });

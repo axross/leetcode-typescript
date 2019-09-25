@@ -1,31 +1,19 @@
 import isStrobogrammatic from "./strobogrammaticNumber";
 
 describe("246. Strobogrammatic Number", () => {
-  test("#1", () => {
-    expect(isStrobogrammatic("69")).toBe(true);
-  });
+  const TEST_CASES = new Map([
+    ["69", true],
+    ["818", true],
+    ["962", false],
+    ["1818", false],
+    ["0", true],
+    ["6", false],
+    ["", true]
+  ]);
 
-  test("#2", () => {
-    expect(isStrobogrammatic("818")).toBe(true);
-  });
-
-  test("#3", () => {
-    expect(isStrobogrammatic("962")).toBe(false);
-  });
-
-  test("#4", () => {
-    expect(isStrobogrammatic("1818")).toBe(false);
-  });
-
-  test("#5", () => {
-    expect(isStrobogrammatic("0")).toBe(true);
-  });
-
-  test("#6", () => {
-    expect(isStrobogrammatic("6")).toBe(false);
-  });
-
-  test("#7", () => {
-    expect(isStrobogrammatic("")).toBe(true);
-  });
+  for (const [num, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${num}`, () => {
+      expect(isStrobogrammatic(num)).toBe(expected);
+    });
+  }
 });

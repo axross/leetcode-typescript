@@ -1,23 +1,28 @@
 import numUniqueEmails from "./uniqueEmailAddresses";
 
 describe("929. Unique Email Addresses", () => {
-  test("#1", () => {
-    expect(
-      numUniqueEmails([
+  const TEST_CASES = new Map([
+    [
+      [
         "test.email+alex@leetcode.com",
         "test.e.mail+bob.cathy@leetcode.com",
         "testemail+david@lee.tcode.com"
-      ])
-    ).toBe(2);
-  });
-
-  test("#2", () => {
-    expect(
-      numUniqueEmails([
+      ],
+      2
+    ],
+    [
+      [
         "testemail@leetcode.com",
         "testemail1@leetcode.com",
         "testemail+david@lee.tcode.com"
-      ])
-    ).toBe(3);
-  });
+      ],
+      3
+    ]
+  ]);
+
+  for (const [emails, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with [${emails}]`, () => {
+      expect(numUniqueEmails(emails)).toBe(expected);
+    });
+  }
 });

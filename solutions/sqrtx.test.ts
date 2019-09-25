@@ -1,31 +1,19 @@
 import mySqrt from "./sqrtx";
 
 describe("69. Sqrt(x)", () => {
-  test("#1", () => {
-    expect(mySqrt(16)).toBe(4);
-  });
+  const TEST_CASES = new Map([
+    [16, 4],
+    [17, 4],
+    [15, 3],
+    [8, 2],
+    [1, 1],
+    [0, 0],
+    [Number.MAX_SAFE_INTEGER, 94906265]
+  ]);
 
-  test("#2", () => {
-    expect(mySqrt(17)).toBe(4);
-  });
-
-  test("#3", () => {
-    expect(mySqrt(15)).toBe(3);
-  });
-
-  test("#4", () => {
-    expect(mySqrt(8)).toBe(2);
-  });
-
-  test("#5", () => {
-    expect(mySqrt(1)).toBe(1);
-  });
-
-  test("#6", () => {
-    expect(mySqrt(0)).toBe(0);
-  });
-
-  test("#7", () => {
-    expect(mySqrt(Number.MAX_SAFE_INTEGER)).toBe(94906265);
-  });
+  for (const [x, expected] of TEST_CASES) {
+    it(`returns ${expected} when called with ${x}`, () => {
+      expect(mySqrt(x)).toBe(expected);
+    });
+  }
 });

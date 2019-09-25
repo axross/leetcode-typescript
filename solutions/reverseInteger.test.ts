@@ -11,7 +11,7 @@ describe("7. Reverse Integer", () => {
 
   for (const [number, expected] of TEST_CASES) {
     it(`returns ${expected} when called with ${number}`, () => {
-      expect(reverse(number)).toEqual(expected);
+      expect(reverse(number)).toBe(expected);
     });
   }
 });
