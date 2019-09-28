@@ -1,6 +1,6 @@
 import checkPerfectNumber from "./perfectNumber";
 
-describe("416. Partition Equal Subset Sum", () => {
+describe("507. Perfect Number", () => {
   const TEST_CASES = new Map([
     [28, true],
     [27, false],
