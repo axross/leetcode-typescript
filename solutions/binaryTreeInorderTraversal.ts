@@ -1,11 +1,13 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 94. Binary Tree Inorder Traversal
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
-export default function inorderTraversal<T>(root: TreeNode<T> | null): T[] {
+export default function inorderTraversal<T>(
+  root: BinaryTreeNode<T> | null
+): T[] {
   const history: T[] = [];
 
-  function traverse(node: TreeNode<T> | null): void {
+  function traverse(node: BinaryTreeNode<T> | null): void {
     if (node === null) return;
 
     traverse(node.left);

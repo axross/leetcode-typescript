@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import levelOrder from "./binaryTreeLevelOrderTraversal";
 
 describe("102. Binary Tree Level Order Traversal", () => {

@@ -1,11 +1,11 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 102. Binary Tree Level Order Traversal
 // https://leetcode.com/problems/binary-tree-level-order-traversal/
-export default function levelOrder<T>(root: TreeNode<T> | null): T[][] {
+export default function levelOrder<T>(root: BinaryTreeNode<T> | null): T[][] {
   const valuesEachLevel: T[][] = [];
 
-  function traverse(node: TreeNode<T> | null, level: number) {
+  function traverse(node: BinaryTreeNode<T> | null, level: number) {
     if (node === null) return;
 
     if (valuesEachLevel[level]) {

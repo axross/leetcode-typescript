@@ -1,9 +1,9 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 112. Path Sum
 // https://leetcode.com/problems/path-sum/
 export default function hasPathSum(
-  root: TreeNode<number> | null,
+  root: BinaryTreeNode<number> | null,
   sum: number
 ): boolean {
   // ⚠️ as following the test cases, we need to return false for hasPathSum(null, 0)

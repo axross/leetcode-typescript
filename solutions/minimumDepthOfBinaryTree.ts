@@ -1,9 +1,9 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 111. Minimum Depth of Binary Tree
 // https://leetcode.com/problems/minimum-depth-of-binary-tree/
-export default function minDepth<T>(node: TreeNode<T> | null) {
-  const queue: [TreeNode<T> | null, number][] = [[node, 1]];
+export default function minDepth<T>(node: BinaryTreeNode<T> | null) {
+  const queue: [BinaryTreeNode<T> | null, number][] = [[node, 1]];
 
   while (queue.length > 0) {
     const [node, depth] = queue.shift()!;

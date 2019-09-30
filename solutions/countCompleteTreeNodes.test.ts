@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import countNodes from "./countCompleteTreeNodes";
 
 describe("222. Count Complete Tree Nodes", () => {

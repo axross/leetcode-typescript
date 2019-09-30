@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import diameterOfBinaryTree from "./diameterOfBinaryTree";
 
 describe("543. Diameter of Binary Tree", () => {

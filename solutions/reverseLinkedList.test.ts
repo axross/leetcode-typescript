@@ -1,4 +1,4 @@
-import { createListNode } from "../utilities/ListNode";
+import { createSinglyLinkedListNode } from "../testUtilities/LinkedList";
 import reverseList from "./reverseLinkedList";
 
 describe("206. Reverse Linked List", () => {
@@ -11,8 +11,8 @@ describe("206. Reverse Linked List", () => {
 
   for (const [values, expected] of TEST_CASES) {
     it(`returns [${expected}] when called with [${values}]`, () => {
-      expect(reverseList(createListNode(values))).toEqual(
-        createListNode(expected)
+      expect(reverseList(createSinglyLinkedListNode(values))).toEqual(
+        createSinglyLinkedListNode(expected)
       );
     });
   }

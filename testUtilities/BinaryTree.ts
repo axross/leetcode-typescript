@@ -1,17 +1,13 @@
-export interface TreeNode<T> {
-  val: T;
-  left: TreeNode<T> | null;
-  right: TreeNode<T> | null;
-}
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 export function createBinaryTreeNode<T>(
   array: (T | null)[]
-): TreeNode<T> | null {
+): BinaryTreeNode<T> | null {
   if (array.length === 0) return null;
 
   let skipped = 0;
   const root = { val: array[0]!, left: null, right: null };
-  const queue: [number, TreeNode<T>, BinaryTreeSide][] = [
+  const queue: [number, BinaryTreeNode<T>, BinaryTreeSide][] = [
     [1, root, BinaryTreeSide.left],
     [2, root, BinaryTreeSide.right]
   ];

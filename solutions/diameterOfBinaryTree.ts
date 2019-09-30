@@ -1,11 +1,13 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 543. Diameter of Binary Tree
 // https://leetcode.com/problems/diameter-of-binary-tree/
 export default function diameterOfBinaryTree<T>(
-  node: TreeNode<T> | null
+  node: BinaryTreeNode<T> | null
 ): number {
-  function getHeightAndDiameter(node: TreeNode<T> | null): [number, number] {
+  function getHeightAndDiameter(
+    node: BinaryTreeNode<T> | null
+  ): [number, number] {
     if (node === null) return [-1, -1];
 
     const [leftHeight, leftDiameter] = getHeightAndDiameter(node.left);

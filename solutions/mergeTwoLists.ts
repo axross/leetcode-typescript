@@ -1,11 +1,11 @@
-import { ListNode } from "../utilities/ListNode";
+import { SinglyLinkedListNode } from "../types/LinkedList";
 
 // 21. Merge Two Sorted Lists
 // https://leetcode.com/problems/merge-two-sorted-lists/
 function mergeTwoLists<T>(
-  list1: ListNode<T> | null,
-  list2: ListNode<T> | null
-): ListNode<T> | null {
+  list1: SinglyLinkedListNode<T> | null,
+  list2: SinglyLinkedListNode<T> | null
+): SinglyLinkedListNode<T> | null {
   if (!list1) {
     return list2;
   }

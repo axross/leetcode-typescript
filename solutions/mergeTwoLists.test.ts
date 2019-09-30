@@ -1,4 +1,4 @@
-import { createListNode } from "../utilities/ListNode";
+import { createSinglyLinkedListNode } from "../testUtilities/LinkedList";
 import mergeTwoLists from "./mergeTwoLists";
 
 describe("21. Merge Two Sorted Lists", () => {
@@ -10,8 +10,11 @@ describe("21. Merge Two Sorted Lists", () => {
   for (const [[list1, list2], expected] of TEST_CASES) {
     it(`returns [${expected}] when called with [${list1}] and [${list2}]`, () => {
       expect(
-        mergeTwoLists(createListNode(list1), createListNode(list2))
-      ).toEqual(createListNode(expected));
+        mergeTwoLists(
+          createSinglyLinkedListNode(list1),
+          createSinglyLinkedListNode(list2)
+        )
+      ).toEqual(createSinglyLinkedListNode(expected));
     });
   }
 });

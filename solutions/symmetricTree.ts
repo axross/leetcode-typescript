@@ -1,12 +1,12 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 101. Symmetric Tree
 // https://leetcode.com/problems/symmetric-tree/
-function isSymmetric<T>(node: TreeNode<T> | null): boolean {
+function isSymmetric<T>(node: BinaryTreeNode<T> | null): boolean {
   // check recursively for each outside-elements
   function isEqual<T>(
-    node1: TreeNode<T> | null,
-    node2: TreeNode<T> | null
+    node1: BinaryTreeNode<T> | null,
+    node2: BinaryTreeNode<T> | null
   ): boolean {
     // if both are null
     if (!node1 && !node2) return true;

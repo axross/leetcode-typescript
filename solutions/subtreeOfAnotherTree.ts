@@ -1,17 +1,20 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 572. Subtree of Another Tree
 // https://leetcode.com/problems/subtree-of-another-tree/
 export default function isSubtree<T = number>(
-  s: TreeNode<T> | null,
-  t: TreeNode<T> | null
+  s: BinaryTreeNode<T> | null,
+  t: BinaryTreeNode<T> | null
 ): boolean {
   return s === null
     ? s === t
     : isSameTree(s, t) || isSubtree(s.left, t) || isSubtree(s.right, t);
 }
 
-function isSameTree<T>(s: TreeNode<T> | null, t: TreeNode<T> | null): boolean {
+function isSameTree<T>(
+  s: BinaryTreeNode<T> | null,
+  t: BinaryTreeNode<T> | null
+): boolean {
   if (s === null && t === null) return true;
 
   if (s !== null && t !== null)

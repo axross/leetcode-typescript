@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import isSubtree from "./subtreeOfAnotherTree";
 
 describe("572. Subtree of Another Tree", () => {

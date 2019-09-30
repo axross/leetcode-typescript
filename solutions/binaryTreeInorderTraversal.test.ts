@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import inorderTraversal from "./binaryTreeInorderTraversal";
 
 describe("94. Binary Tree Inorder Traversal", () => {

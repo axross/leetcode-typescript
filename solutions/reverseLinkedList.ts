@@ -1,8 +1,10 @@
-import { ListNode } from "../utilities/ListNode";
+import { SinglyLinkedListNode } from "../types/LinkedList";
 
 // 206. Reverse Linked List
 // https://leetcode.com/problems/reverse-linked-list/
-function reverseList<T>(head: ListNode<T> | null): ListNode<T> | null {
+function reverseList<T>(
+  head: SinglyLinkedListNode<T> | null
+): SinglyLinkedListNode<T> | null {
   if (head === null || head.next === null) return head;
 
   // call itself recursively with next node as the new head:  [1, 2, 3] -> [2, 3] -> [3]

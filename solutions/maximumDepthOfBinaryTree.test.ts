@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import maxDepth from "./maximumDepthOfBinaryTree";
 
 describe("104. Maximum Depth of Binary Tree", () => {

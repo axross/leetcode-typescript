@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import minDepth from "./minimumDepthOfBinaryTree";
 
 describe("111. Minimum Depth of Binary Tree", () => {
