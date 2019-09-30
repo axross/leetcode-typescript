@@ -5,7 +5,7 @@ describe("111. Minimum Depth of Binary Tree", () => {
   const TEST_CASES = new Map([
     [[3, 9, 20, null, null, 15, 7], 2],
     [[1, 2], 2],
-    [[1, 2, null, null, null, 2], 3],
+    [[1, null, 2, null, 2], 3],
     [[1], 1],
     [[], 0]
   ]);
