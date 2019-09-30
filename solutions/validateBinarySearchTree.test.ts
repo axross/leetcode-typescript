@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import isValidBST from "./validateBinarySearchTree";
 
 describe("98. Validate Binary Search Tree", () => {

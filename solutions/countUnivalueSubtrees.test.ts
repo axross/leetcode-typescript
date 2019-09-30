@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import countUnivalSubtrees from "./countUnivalueSubtrees";
 
 describe("250. Count Univalue Subtrees", () => {

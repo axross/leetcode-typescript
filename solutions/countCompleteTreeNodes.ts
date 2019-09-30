@@ -1,8 +1,8 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 222. Count Complete Tree Nodes
 // https://leetcode.com/problems/count-complete-tree-nodes/
-function countNodes(root: TreeNode<number> | null): number {
+function countNodes(root: BinaryTreeNode<number> | null): number {
   if (!root) return 0;
 
   const leftHeight = calculateHeight(root.left);
@@ -17,7 +17,7 @@ function countNodes(root: TreeNode<number> | null): number {
       2 ** rightHeight + countNodes(root.left);
 }
 
-function calculateHeight(root: TreeNode<number> | null): number {
+function calculateHeight(root: BinaryTreeNode<number> | null): number {
   return root ? 1 + calculateHeight(root.left) : 0;
 }
 

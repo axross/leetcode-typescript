@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import isSymmetric from "./symmetricTree";
 
 describe("101. Symmetric Tree", () => {

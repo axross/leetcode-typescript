@@ -1,9 +1,9 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 98. Validate Binary Search Tree
 // https://leetcode.com/problems/validate-binary-search-tree/
 export default function isValidBST(
-  node: TreeNode<number> | null,
+  node: BinaryTreeNode<number> | null,
   greaterThan = -Infinity,
   lessThan = Infinity
 ): boolean {

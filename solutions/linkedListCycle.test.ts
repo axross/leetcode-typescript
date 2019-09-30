@@ -1,4 +1,5 @@
-import { createListNode, ListNode } from "../utilities/ListNode";
+import { createSinglyLinkedListNode } from "../testUtilities/LinkedList";
+import { SinglyLinkedListNode } from "../types/LinkedList";
 import hasCycle from "./linkedListCycle";
 
 describe("141. Linked List Cycle", () => {
@@ -10,10 +11,10 @@ describe("141. Linked List Cycle", () => {
 
   for (const [[values, cycleStart], expected] of TEST_CASES) {
     it(`returns ${expected} when called with [${values}] (cycle starts from ${cycleStart})`, () => {
-      const head = createListNode(values);
+      const head = createSinglyLinkedListNode(values);
 
       let node = head;
-      let cycleStartNode: ListNode<number> | null = null;
+      let cycleStartNode: SinglyLinkedListNode<number> | null = null;
 
       for (const i of values.keys()) {
         if (i === cycleStart) {

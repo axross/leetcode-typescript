@@ -1,4 +1,4 @@
-import { createBinaryTreeNode } from "../utilities/TreeNode";
+import { createBinaryTreeNode } from "../testUtilities/BinaryTree";
 import preorderTraversal from "./binaryTreePreorderTraversal";
 
 describe("144. Binary Tree Preorder Traversal", () => {

@@ -1,11 +1,13 @@
-import { TreeNode } from "../utilities/TreeNode";
+import { BinaryTreeNode } from "../types/BinaryTree";
 
 // 144. Binary Tree Preorder Traversal
 // https://leetcode.com/problems/binary-tree-preorder-traversal/
-export default function preorderTraversal<T>(root: TreeNode<T> | null): T[] {
+export default function preorderTraversal<T>(
+  root: BinaryTreeNode<T> | null
+): T[] {
   const history: T[] = [];
 
-  function traverse(node: TreeNode<T> | null): void {
+  function traverse(node: BinaryTreeNode<T> | null): void {
     if (node === null) return;
 
     history.push(node.val);

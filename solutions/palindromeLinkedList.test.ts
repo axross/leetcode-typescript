@@ -1,4 +1,4 @@
-import { createListNode } from "../utilities/ListNode";
+import { createSinglyLinkedListNode } from "../testUtilities/LinkedList";
 import isPalindrome from "./palindromeLinkedList";
 
 describe("234. Palindrome Linked List", () => {
@@ -11,7 +11,7 @@ describe("234. Palindrome Linked List", () => {
 
   for (const [values, expected] of TEST_CASES) {
     it(`returns ${expected} when called with [${values}]`, () => {
-      expect(isPalindrome(createListNode(values))).toBe(expected);
+      expect(isPalindrome(createSinglyLinkedListNode(values))).toBe(expected);
     });
   }
 });
