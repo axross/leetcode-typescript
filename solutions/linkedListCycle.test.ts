@@ -1,5 +1,7 @@
-import { createSinglyLinkedListNode } from "../testUtilities/LinkedList";
-import { SinglyLinkedListNode } from "../types/LinkedList";
+import {
+  createSinglyLinkedListNode,
+  getNthNode
+} from "../testUtilities/LinkedList";
 import hasCycle from "./linkedListCycle";
 
 describe("141. Linked List Cycle", () => {
@@ -10,22 +12,13 @@ describe("141. Linked List Cycle", () => {
   ]);
 
   for (const [[values, cycleStart], expected] of TEST_CASES) {
-    it(`returns ${expected} when called with [${values}] (cycle starts from ${cycleStart})`, () => {
-      const head = createSinglyLinkedListNode(values);
+    it(`returns ${expected} when called with [${values}] ${
+      cycleStart === -1 ? "(no cycle)" : `(cycle starts from ${cycleStart})`
+    }`, () => {
+      const head = createSinglyLinkedListNode(values)!;
 
-      let node = head;
-      let cycleStartNode: SinglyLinkedListNode<number> | null = null;
-
-      for (const i of values.keys()) {
-        if (i === cycleStart) {
-          cycleStartNode = node;
-        }
-
-        if (i === values.length - 1) {
-          node!.next = cycleStartNode;
-        }
-
-        node = node!.next;
+      if (cycleStart !== -1) {
+        getNthNode(head, -1).next = getNthNode(head, cycleStart);
       }
 
       expect(hasCycle(head)).toBe(expected);
