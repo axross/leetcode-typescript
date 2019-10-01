@@ -1,6 +1,6 @@
 // 78. Subsets
 // https://leetcode.com/problems/subsets/
-function subsets(nums: number[]): number[][] {
+export default function subsets(nums: number[]): number[][] {
   const result = [];
 
   for (let i = 0; i < Math.pow(2, nums.length); ++i) {
@@ -18,5 +18,3 @@ function subsets(nums: number[]): number[][] {
 
   return result;
 }
-
-export default subsets;
