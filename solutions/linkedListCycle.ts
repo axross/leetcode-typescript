@@ -5,19 +5,15 @@ import { SinglyLinkedListNode } from "../types/LinkedList";
 export default function hasCycle<T>(
   head: SinglyLinkedListNode<T> | null
 ): boolean {
-  function traverse(
-    previous: SinglyLinkedListNode<T> | null,
-    node: SinglyLinkedListNode<T> | null
-  ): boolean {
-    if (node === null) return false;
-    if (node === head && previous !== null) return true;
+  let walker = head;
+  let runner = head ? head.next : null;
 
-    const next = node.next;
+  while (walker && runner) {
+    if (walker && walker === runner) return true;
 
-    node.next = previous;
-
-    return traverse(node, next);
+    walker = walker.next;
+    runner = runner.next ? runner.next.next : null;
   }
 
-  return traverse(null, head);
+  return false;
 }
