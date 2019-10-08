@@ -1,9 +1,9 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
-import { assert } from "https://deno.land/std/testing/asserts.ts";
+import { assertStrictEq } from "https://deno.land/std/testing/asserts.ts";
 import searchMatrix from "./search_a2d_matrix2.ts";
 
 test("240. Search a 2D Matrix II", () => {
-  assert(
+  assertStrictEq(
     searchMatrix(
       [
         [1, 4, 7, 11, 15],
@@ -13,9 +13,10 @@ test("240. Search a 2D Matrix II", () => {
         [18, 21, 23, 26, 30]
       ],
       5
-    ) === true
+    ),
+    true
   );
-  assert(
+  assertStrictEq(
     searchMatrix(
       [
         [1, 4, 7, 11, 15],
@@ -25,6 +26,7 @@ test("240. Search a 2D Matrix II", () => {
         [18, 21, 23, 26, 30]
       ],
       20
-    ) === false
+    ),
+    false
   );
 });

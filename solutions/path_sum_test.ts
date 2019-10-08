@@ -1,10 +1,10 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
-import { assert } from "https://deno.land/std/testing/asserts.ts";
+import { assertStrictEq } from "https://deno.land/std/testing/asserts.ts";
 import { createBinaryTreeNode } from "../test_utilities/binary_tree.ts";
 import pathSum from "./path_sum.ts";
 
 test("112. Path Sum", () => {
-  assert(
+  assertStrictEq(
     pathSum(
       createBinaryTreeNode([
         5,
@@ -22,9 +22,10 @@ test("112. Path Sum", () => {
         1
       ]),
       22
-    ) === true
+    ),
+    true
   );
-  assert(
+  assertStrictEq(
     pathSum(
       createBinaryTreeNode([
         5,
@@ -42,7 +43,8 @@ test("112. Path Sum", () => {
         1
       ]),
       20
-    ) === false
+    ),
+    false
   );
-  assert(pathSum(createBinaryTreeNode([]), 0) === false);
+  assertStrictEq(pathSum(createBinaryTreeNode([]), 0), false);
 });

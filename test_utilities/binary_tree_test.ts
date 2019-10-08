@@ -1,5 +1,5 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
-import { assert, assertEquals } from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals, assertStrictEq } from "https://deno.land/std/testing/asserts.ts";
 import { createBinaryTreeNode } from "./binary_tree.ts";
 
   test("createBinaryTreeNode() returns a BinaryTreeNode", () => {
@@ -49,5 +49,5 @@ import { createBinaryTreeNode } from "./binary_tree.ts";
   });
 
   test("createBinaryTreeNode() returns null when the given array is empty", () => {
-    assert(createBinaryTreeNode([]) === null);
+    assertStrictEq(createBinaryTreeNode([]) , null);
   });
