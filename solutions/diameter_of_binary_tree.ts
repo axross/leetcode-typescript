@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 543. Diameter of Binary Tree
 // https://leetcode.com/problems/diameter-of-binary-tree/

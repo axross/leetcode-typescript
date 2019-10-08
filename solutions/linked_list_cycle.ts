@@ -1,10 +1,8 @@
-import { SinglyLinkedListNode } from "../types/linked_list.ts";
+import { LinkedListNode } from "../data_structures/linked_list.ts";
 
 // 141. Linked List Cycle
 // https://leetcode.com/problems/linked-list-cycle/
-export default function hasCycle<T>(
-  head: SinglyLinkedListNode<T> | null
-): boolean {
+export default function hasCycle<T>(head: LinkedListNode<T> | null): boolean {
   let walker = head;
   let runner = head ? head.next : null;
 

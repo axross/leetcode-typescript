@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 112. Path Sum
 // https://leetcode.com/problems/path-sum/

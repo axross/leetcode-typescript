@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 98. Validate Binary Search Tree
 // https://leetcode.com/problems/validate-binary-search-tree/

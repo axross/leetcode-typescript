@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 222. Count Complete Tree Nodes
 // https://leetcode.com/problems/count-complete-tree-nodes/

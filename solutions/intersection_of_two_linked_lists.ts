@@ -1,11 +1,11 @@
-import { SinglyLinkedListNode } from "../types/linked_list.ts";
+import { LinkedListNode } from "../data_structures/linked_list.ts";
 
 // 160. Intersection of Two Linked Lists
 // https://leetcode.com/problems/intersection-of-two-linked-lists/
 export default function getIntersectionNode<T>(
-  headA: SinglyLinkedListNode<T> | null,
-  headB: SinglyLinkedListNode<T> | null
-): SinglyLinkedListNode<T> | null {
+  headA: LinkedListNode<T> | null,
+  headB: LinkedListNode<T> | null
+): LinkedListNode<T> | null {
   let a = headA;
   let b = headB;
 

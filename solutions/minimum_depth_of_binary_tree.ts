@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 111. Minimum Depth of Binary Tree
 // https://leetcode.com/problems/minimum-depth-of-binary-tree/

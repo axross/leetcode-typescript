@@ -1,13 +1,13 @@
-import { SinglyLinkedListNode } from "../types/linked_list.ts";
+import { LinkedListNode } from "../data_structures/linked_list.ts";
 
 // 234. Palindrome Linked List
 // https://leetcode.com/problems/palindrome-linked-list/
 export default function isPalindrome<T>(
-  node: SinglyLinkedListNode<T> | null
+  node: LinkedListNode<T> | null
 ): boolean {
   let left = node;
 
-  function traverse(right: SinglyLinkedListNode<T> | null): boolean {
+  function traverse(right: LinkedListNode<T> | null): boolean {
     if (right === null) return true;
 
     const isNextMightBePalindrome = traverse(right.next);
