@@ -1,6 +1,6 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
 import { assertStrictEq } from "https://deno.land/std/testing/asserts.ts";
-import { createBinaryTreeNode } from "../test_utilities/binary_tree.ts";
+import { createBinaryTreeNode } from "../data_structures/binary_tree.ts";
 import isSymmetric from "./symmetric_tree.ts";
 
 test("101. Symmetric Tree", () => {

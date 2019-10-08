@@ -1,4 +1,8 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+export interface BinaryTreeNode<T> {
+  val: T;
+  left: BinaryTreeNode<T> | null;
+  right: BinaryTreeNode<T> | null;
+}
 
 export function createBinaryTreeNode<T>(
   array: (T | null)[]

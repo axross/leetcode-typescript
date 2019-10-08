@@ -1,11 +1,14 @@
-import { SinglyLinkedListNode } from "../types/linked_list.ts";
+export interface LinkedListNode<T> {
+  val: T;
+  next: LinkedListNode<T> | null;
+}
 
-export function createSinglyLinkedListNode<T>(
+export function createLinkedListNode<T>(
   array: T[]
-): SinglyLinkedListNode<T> | null {
+): LinkedListNode<T> | null {
   if (array.length === 0) return null;
 
-  const head: SinglyLinkedListNode<T> = { val: array[0], next: null };
+  const head: LinkedListNode<T> = { val: array[0], next: null };
   let tail = head;
 
   for (let i = 1; i < array.length; ++i) {
@@ -19,9 +22,9 @@ export function createSinglyLinkedListNode<T>(
 }
 
 export function getNthNode<T>(
-  node: SinglyLinkedListNode<T>,
+  node: LinkedListNode<T>,
   n: number
-): SinglyLinkedListNode<T> {
+): LinkedListNode<T> {
   if (!Number.isSafeInteger(n)) {
     throw new TypeError("the given index is not an integer");
   }

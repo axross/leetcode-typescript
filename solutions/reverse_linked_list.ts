@@ -1,10 +1,10 @@
-import { SinglyLinkedListNode } from "../types/linked_list.ts";
+import { LinkedListNode } from "../data_structures/linked_list.ts";
 
 // 206. Reverse Linked List
 // https://leetcode.com/problems/reverse-linked-list/
 export default function reverseList<T>(
-  head: SinglyLinkedListNode<T> | null
-): SinglyLinkedListNode<T> | null {
+  head: LinkedListNode<T> | null
+): LinkedListNode<T> | null {
   if (head === null || head.next === null) return head;
 
   // call itself recursively with next node as the new head:  [1, 2, 3] -> [2, 3] -> [3]

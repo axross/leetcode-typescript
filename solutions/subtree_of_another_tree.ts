@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 572. Subtree of Another Tree
 // https://leetcode.com/problems/subtree-of-another-tree/

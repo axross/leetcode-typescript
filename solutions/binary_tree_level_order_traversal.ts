@@ -1,4 +1,4 @@
-import { BinaryTreeNode } from "../types/binary_tree.ts";
+import { BinaryTreeNode } from "../data_structures/binary_tree.ts";
 
 // 102. Binary Tree Level Order Traversal
 // https://leetcode.com/problems/binary-tree-level-order-traversal/
