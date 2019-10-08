@@ -1,5 +1,5 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
-import { assert, assertEquals, assertThrows } from "https://deno.land/std/testing/asserts.ts";
+import { assertEquals, assertStrictEq, assertThrows } from "https://deno.land/std/testing/asserts.ts";
 import { createSinglyLinkedListNode, getNthNode } from "./linked_list.ts";
 
 
@@ -33,15 +33,15 @@ import { createSinglyLinkedListNode, getNthNode } from "./linked_list.ts";
   });
 
   test("createSinglyLinkedListNode() returns null if the given array is empty", () => {
-    assert(createSinglyLinkedListNode([]) === null);
+    assertStrictEq(createSinglyLinkedListNode([]) , null);
   });
 
 
   test("getNthNode(node, n) returns the n-th node", () => {
-    assert(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 0).val === 0);
-    assert(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 2).val === 2);
-    assert(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -1).val === 5);
-    assert(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -3).val === 3);
+    assertStrictEq(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 0).val , 0);
+    assertStrictEq(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, 2).val , 2);
+    assertStrictEq(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -1).val , 5);
+    assertStrictEq(getNthNode(createSinglyLinkedListNode([0, 1, 2, 3, 4, 5])!, -3).val , 3);
   });
 
   test("getNthNode(node, n) doesn't mutates the given linked list", () => {
@@ -51,7 +51,7 @@ import { createSinglyLinkedListNode, getNthNode } from "./linked_list.ts";
     getNthNode(head, 2);
     getNthNode(head, 3);
 
-    assert(getNthNode(head, 2).val === 2);
+    assertStrictEq(getNthNode(head, 2).val , 2);
   });
 
   test("getNthNode(node, n) throws an Error if the given index is out of bounds", () => {

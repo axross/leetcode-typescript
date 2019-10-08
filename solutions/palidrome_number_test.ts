@@ -1,13 +1,13 @@
 import { test } from "https://deno.land/std/testing/mod.ts";
-import { assert } from "https://deno.land/std/testing/asserts.ts";
+import { assertStrictEq } from "https://deno.land/std/testing/asserts.ts";
 import isPalindrome from "./palidrome_number.ts";
 
 test("9. Palindrome Number", () => {
-  assert(isPalindrome(121) === true);
-  assert(isPalindrome(-121) === false);
-  assert(isPalindrome(5) === true);
-  assert(isPalindrome(0) === true);
-  assert(isPalindrome(10) === false);
-  assert(isPalindrome(101) === true);
-  assert(isPalindrome(1010) === false);
+  assertStrictEq(isPalindrome(121), true);
+  assertStrictEq(isPalindrome(-121), false);
+  assertStrictEq(isPalindrome(5), true);
+  assertStrictEq(isPalindrome(0), true);
+  assertStrictEq(isPalindrome(10), false);
+  assertStrictEq(isPalindrome(101), true);
+  assertStrictEq(isPalindrome(1010), false);
 });
