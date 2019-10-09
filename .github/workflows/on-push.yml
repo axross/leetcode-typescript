@@ -1,0 +1,13 @@
+name: on Push
+on:
+  push:
+    branches:
+      - "*"
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: curl -fsSL https://deno.land/x/install/install.sh | sh
+      - run: /home/runner/.deno/bin/deno test --allow-net
