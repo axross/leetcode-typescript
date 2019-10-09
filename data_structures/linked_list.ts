@@ -3,9 +3,7 @@ export interface LinkedListNode<T> {
   next: LinkedListNode<T> | null;
 }
 
-export function createLinkedListNode<T>(
-  array: T[]
-): LinkedListNode<T> | null {
+export function createLinkedListNode<T>(array: T[]): LinkedListNode<T> | null {
   if (array.length === 0) return null;
 
   const head: LinkedListNode<T> = { val: array[0], next: null };

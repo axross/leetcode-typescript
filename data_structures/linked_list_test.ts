@@ -89,8 +89,7 @@ test("getNthNode(node, n) throws a TypeError if the given index is not an intege
     TypeError
   );
   assertThrows(
-    () =>
-      getNthNode(createLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
+    () => getNthNode(createLinkedListNode([0, 1, 2, 3, 4, 5])!, -Infinity),
     TypeError
   );
   assertThrows(
