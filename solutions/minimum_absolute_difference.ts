@@ -1,6 +1,8 @@
 // 1200. Minimum Absolute Difference
 // https://leetcode.com/problems/minimum-absolute-difference/
-export default function minimumAbsDifference(arr: number[]): [number, number][] {
+export default function minimumAbsDifference(
+  arr: number[]
+): [number, number][] {
   arr.sort((a, b) => a - b);
 
   let pairs: [number, number][] = [];
@@ -12,9 +14,9 @@ export default function minimumAbsDifference(arr: number[]): [number, number][] 
     if (diff > minimumDiff) continue;
 
     if (diff === minimumDiff) {
-      pairs.push([arr[i], arr[i+1]]);
+      pairs.push([arr[i], arr[i + 1]]);
     } else if (diff < minimumDiff) {
-      pairs = [[arr[i], arr[i+1]]];
+      pairs = [[arr[i], arr[i + 1]]];
     }
 
     minimumDiff = diff;
